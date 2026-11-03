@@ -36,6 +36,8 @@ export function useAvailability(agents = []) {
   const currentTime = computed(() => new Date());
 
   const hasOnlineAgents = computed(() => {
+    // Mr. Bot: con un bot conectado siempre hay quien responda al instante, aunque no haya agentes en línea (ver MRBOT.md).
+    if (channelConfig.value.hasAConnectedAgentBot) return true;
     const agentList = availableAgents.value || [];
     return Array.isArray(agentList) ? agentList.length > 0 : false;
   });

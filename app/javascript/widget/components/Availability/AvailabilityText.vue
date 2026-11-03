@@ -58,6 +58,10 @@ const allDayClosed = computed(() => {
 });
 
 const replyTimeMessage = computed(() => {
+  // Mr. Bot: el bot responde al instante (ver MRBOT.md).
+  if (window.chatwootWebChannel?.hasAConnectedAgentBot) {
+    return t('REPLY_TIME.INSTANTLY');
+  }
   const replyTimeKey = `REPLY_TIME.${props.replyTime.toUpperCase()}`;
   return t(replyTimeKey);
 });

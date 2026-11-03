@@ -50,6 +50,20 @@ describe('useAvailability', () => {
     });
   });
 
+  describe('with a connected agent bot (Mr. Bot)', () => {
+    it('counts as online even without agents', () => {
+      window.chatwootWebChannel.hasAConnectedAgentBot = 'Asistente Mr. Bot';
+      const { hasOnlineAgents } = useAvailability([]);
+      expect(hasOnlineAgents.value).toBe(true);
+    });
+
+    it('stays offline without agents when no bot is connected', () => {
+      window.chatwootWebChannel.hasAConnectedAgentBot = '';
+      const { hasOnlineAgents } = useAvailability([]);
+      expect(hasOnlineAgents.value).toBe(false);
+    });
+  });
+
   describe('with agents', () => {
     it('should handle agents array', () => {
       const agents = [{ id: 1 }, { id: 2 }];
