@@ -74,7 +74,7 @@
 }
 
 .woot-widget-bubble.woot-widget-bubble--flat svg {
-  margin: 16px !important;
+  margin: 14px !important;
 }
 
 .woot-widget-bubble.woot-widget-bubble--flat.woot--close::before,
@@ -151,12 +151,13 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
 }
 
+/* Mr. Bot: la burbuja del diseño ocupa un poco más del botón (28 px en 64 px). */
 .woot-widget-bubble svg {
   all: revert;
-  height: 24px !important;
-  margin: 20px !important;
+  height: 28px !important;
+  margin: 18px !important;
   padding: 0 !important;
-  width: 24px !important;
+  width: 28px !important;
 }
 
 .woot-widget-bubble.woot-widget-bubble-color--lighter path {

@@ -17,7 +17,9 @@ de `LICENSE` se mantiene.
 | `docker/Dockerfile` | `ENV CW_EDITION="ce"` al final |
 | `.github/workflows/` | Fuera los de Chatwoot; `mrbot-imagen.yml` publica la imagen en GHCR |
 | `config/installation_config.yml` | `INSTALLATION_NAME` y `BRAND_NAME` «Mr. Bot Salud»; `BRAND_URL` y `WIDGET_BRAND_URL` a salud.mrbot.cloud |
-| `public/brand-assets/logo*.svg`, `public/favicon.ico` | Logos y favicon de Mr. Bot |
+| `public/brand-assets/logo*.svg`, `mrbot-*.svg`, `public/favicon.ico` | Logos y favicon de Mr. Bot. La configuración usa los `mrbot-*.svg`: nombres nuevos, para que los navegadores no sigan mostrando los logos de Chatwoot que guardaron por un año |
+| `public/favicon-*.png`, `apple-*.png`, `android-icon-*.png`, `ms-icon-*.png` | Íconos de pestaña y de pantalla de inicio con el símbolo de Mr. Bot |
+| `app/javascript/sdk/bubbleHelpers.js`, `sdk/sdk.css` | Botón del chat con la burbuja de tres puntos del diseño (28 px) y título «Abrir el chat de ayuda» |
 | `app/views/public/api/v1/portals/_footer.html.erb` | Pie del centro de ayuda con nuestro logo y nombre |
 | `app/views/public/api/v1/portals/documentation_layout/_footer.html.erb` | Sin «Hecho con» |
 | `app/javascript/shared/assets/fonts/Manrope/` | Manrope (OFL), incluida en la imagen |

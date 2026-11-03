@@ -7,8 +7,14 @@ import {
 } from '../widget/constants/sdkEvents';
 import { dispatchWindowEvent } from 'shared/helpers/CustomEventHelper';
 
+// Mr. Bot: el botón del chat es una burbuja de conversación con tres puntos (artes de soporte), no la de Chatwoot.
+// Anillo y puntos en un solo trazado con fill-rule evenodd, así el color sigue la regla «--lighter» del CSS.
 export const bubbleSVG =
-  'M240.808 240.808H122.123C56.6994 240.808 3.45695 187.562 3.45695 122.122C3.45695 56.7031 56.6994 3.45697 122.124 3.45697C187.566 3.45697 240.808 56.7031 240.808 122.122V240.808Z';
+  'M77.74 205.63A100 100 0 1 0 33.4 165L20 220Z' +
+  'M80.21 184.41A80 80 0 1 0 54.85 161.42L47.25 192.61Z' +
+  'M67.5 115a12.5 12.5 0 1 0 25 0a12.5 12.5 0 1 0 -25 0Z' +
+  'M107.5 115a12.5 12.5 0 1 0 25 0a12.5 12.5 0 1 0 -25 0Z' +
+  'M147.5 115a12.5 12.5 0 1 0 25 0a12.5 12.5 0 1 0 -25 0Z';
 
 export const body = document.getElementsByTagName('body')[0];
 export const widgetHolder = document.createElement('div');
@@ -44,6 +50,7 @@ export const createBubbleIcon = ({ className, path, target }) => {
   );
   bubblePath.setAttributeNS(null, 'd', path);
   bubblePath.setAttributeNS(null, 'fill', '#FFFFFF');
+  bubblePath.setAttributeNS(null, 'fill-rule', 'evenodd');
 
   bubbleIcon.appendChild(bubblePath);
   target.appendChild(bubbleIcon);
@@ -57,7 +64,7 @@ export const createBubbleIcon = ({ className, path, target }) => {
   }
 
   target.className = bubbleClassName;
-  target.title = 'Open chat window';
+  target.title = 'Abrir el chat de ayuda';
   return target;
 };
 
