@@ -30,6 +30,10 @@ export default {
     };
   },
   computed: {
+    // Mr. Bot: el chat no muestra «Desarrollado por …» (ver MRBOT.md).
+    showBranding() {
+      return false;
+    },
     brandRedirectURL() {
       try {
         const referrerHost = this.$store.getters['appConfig/getReferrerHost'];
@@ -53,7 +57,7 @@ export default {
 
 <template>
   <div
-    v-if="globalConfig.brandName && !disableBranding"
+    v-if="showBranding && globalConfig.brandName && !disableBranding"
     class="px-0 py-3 flex justify-center"
   >
     <a
