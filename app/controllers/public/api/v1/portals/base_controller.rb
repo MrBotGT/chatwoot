@@ -75,6 +75,7 @@ class Public::Api::V1::Portals::BaseController < PublicController
   end
 
   def set_global_config
-    @global_config = GlobalConfig.get('LOGO_THUMBNAIL', 'BRAND_NAME', 'BRAND_URL', 'INSTALLATION_NAME')
+    # Mr. Bot: también LOGO y LOGO_DARK, para el logo de la barra de arriba (ver MRBOT.md).
+    @global_config = GlobalConfig.get('LOGO_THUMBNAIL', 'BRAND_NAME', 'BRAND_URL', 'INSTALLATION_NAME', 'LOGO', 'LOGO_DARK')
   end
 end
