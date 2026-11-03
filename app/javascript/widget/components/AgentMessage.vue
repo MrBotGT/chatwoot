@@ -67,6 +67,10 @@ export default {
       const { content_type: type = '' } = this.message;
       return type;
     },
+    // Mr. Bot: los mensajes del bot llevan el distintivo «Respondió la IA» (ver MRBOT.md).
+    isBotMessage() {
+      return this.message.sender?.type === 'agent_bot';
+    },
     agentName() {
       if (this.message.sender) {
         return this.message.sender.available_name || this.message.sender.name;
@@ -204,6 +208,12 @@ export default {
               :message-type="messageType"
               :message="message.content"
             />
+            <span
+              v-if="isBotMessage && shouldDisplayAgentMessage"
+              class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium text-[#0A6E99] bg-[#E5F3F9]"
+            >
+              ✦ {{ $t('MRBOT.AI_REPLIED') }}
+            </span>
             <div
               v-if="hasAttachments"
               class="space-y-2 chat-bubble has-attachment agent bg-n-background dark:bg-n-solid-3"

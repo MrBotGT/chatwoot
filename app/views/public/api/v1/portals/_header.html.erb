@@ -4,6 +4,10 @@
       <a href="<%= generate_home_link(@portal.slug, @portal.config['default_locale'] || params[:locale], @theme_from_params, false) %>" class="flex items-center min-w-0 h-10">
         <% if @portal.logo.present? %>
           <img src="<%= url_for(@portal.logo) %>" class="w-auto h-10 ltr:mr-2 rtl:ml-2" draggable="false" />
+        <% elsif @global_config['LOGO'].present? %>
+          <%# Mr. Bot: sin logo propio del portal, el de la instalación (claro y oscuro), ver MRBOT.md %>
+          <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['BRAND_NAME'] %>" class="w-auto h-7 ltr:mr-3 rtl:ml-3 dark:hidden" draggable="false" />
+          <img src="<%= @global_config['LOGO_DARK'] %>" alt="<%= @global_config['BRAND_NAME'] %>" class="w-auto h-7 ltr:mr-3 rtl:ml-3 hidden dark:block" draggable="false" />
         <% end %>
         <span class="text-lg font-semibold text-slate-900 truncate dark:text-white <%= @portal.logo.present? ? 'hidden lg:block' : 'hidden sm:block' %>"><%= @portal.localized_value('name', @locale) %></span>
       </a>
@@ -105,6 +109,10 @@
       <a href="<%= generate_home_link(@portal.slug, @portal.config['default_locale'] || params[:locale], @theme_from_params, false) %>" class="flex items-center min-w-0 h-10 text-lg font-semibold text-slate-900 dark:text-white">
         <% if @portal.logo.present? %>
           <img src="<%= url_for(@portal.logo) %>" class="w-auto h-10 ltr:mr-2 rtl:ml-2" draggable="false" />
+        <% elsif @global_config['LOGO'].present? %>
+          <%# Mr. Bot: sin logo propio del portal, el de la instalación (claro y oscuro), ver MRBOT.md %>
+          <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['BRAND_NAME'] %>" class="w-auto h-7 ltr:mr-3 rtl:ml-3 dark:hidden" draggable="false" />
+          <img src="<%= @global_config['LOGO_DARK'] %>" alt="<%= @global_config['BRAND_NAME'] %>" class="w-auto h-7 ltr:mr-3 rtl:ml-3 hidden dark:block" draggable="false" />
         <% end %>
          <span class="text-lg font-semibold text-slate-900 truncate dark:text-white <%= @portal.logo.present? ? 'hidden' : 'sm:hidden block' %>"><%= @portal.localized_value('name', @locale) %></span>
       </a>

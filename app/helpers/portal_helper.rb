@@ -101,6 +101,9 @@ module PortalHelper
   def render_emoji_or_icon(value, color = nil)
     return '' if value.blank?
 
+    # Mr. Bot: los íconos de nuestras categorías vienen en la imagen (public/brand-assets/ayuda/, ver MRBOT.md).
+    return tag.img(src: value, alt: '', class: 'mrbot-icono', 'aria-hidden': true) if value.match?(%r{\A/brand-assets/ayuda/[a-z0-9-]+\.svg\z})
+
     # Emojis are non-ascii; bare icon names match this safe charset.
     return ERB::Util.html_escape(value) unless value.match?(/\A[a-z][a-z0-9-]*\z/)
 

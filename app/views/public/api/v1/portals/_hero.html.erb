@@ -9,21 +9,23 @@
     <meta name="twitter:image" content="<%= @og_image_url.html_safe %>">
   <% end %>
 <% end %>
-<section id="portal-bg" class="w-full bg-white dark:bg-slate-900 shadow-inner">
-  <div id="portal-bg-gradient" class="pt-8 pb-8 md:pt-14 md:pb-6 min-h-[240px] md:min-h-[260px]">
+<%# Mr. Bot: cabecera azul como la portada del centro de ayuda (ver MRBOT.md). %>
+<section id="mrbot-hero" class="relative w-full overflow-hidden bg-[#0F294A]">
+  <img src="/brand-assets/ayuda/portada-iconos.png" alt="" aria-hidden="true" draggable="false"
+       class="hidden lg:block absolute top-0 right-0 h-full w-auto select-none pointer-events-none [mask-image:linear-gradient(to_right,transparent,black_25%)]" />
+  <div class="relative pt-10 pb-12 md:pt-16 md:pb-16 min-h-[240px] md:min-h-[320px]">
     <div class="mx-auto max-w-5xl px-4 md:px-8 flex flex-col items-start">
-       <span class="text-sm leading-[24px] font-semibold text-slate-600 dark:text-slate-300 mb-1 <%= @portal.logo.present? ? 'block lg:hidden' : 'hidden' %>"><%= @portal.localized_value('name', @locale) %></span>
-      <h1 class="text-2xl md:text-4xl text-slate-900 dark:text-white font-semibold leading-normal">
-        <%= portal.localized_value('header_text', @locale) %>
+      <h1 class="text-3xl md:text-5xl text-white font-bold leading-tight tracking-tight">
+        <%= @portal.localized_value('name', @locale) %>
       </h1>
-      <p class="text-slate-600 dark:text-slate-200 text-start text-lg leading-normal pt-2 pb-4"><%= I18n.t('public_portal.hero.sub_title') %></p>
-      <div id="search-wrap" class="w-full relative z-30"></div>
+      <p class="text-slate-200 text-lg leading-normal pt-3 pb-6 max-w-xl"><%= portal.localized_value('header_text', @locale) %></p>
+      <div id="search-wrap" class="w-full max-w-xl relative z-30"></div>
       <% if @recommended_categories.present? %>
         <div class="mt-5 flex items-center gap-2 flex-wrap text-sm">
-          <span class="text-slate-500 dark:text-slate-400"><%= I18n.t('public_portal.sidebar.recommended_label') %></span>
+          <span class="text-slate-300"><%= I18n.t('public_portal.sidebar.recommended_label') %></span>
           <% @recommended_categories.each do |category| %>
             <a href="<%= public_portal_category_path(@portal.slug, category.locale, category.slug) %>"
-               class="recommended-pill inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 border border-solid border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-100 transition">
+               class="recommended-pill inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 border border-solid border-white/20 text-white transition">
               <% if category.icon.present? %><span class="inline-flex items-center text-xs leading-none"><%= render_emoji_or_icon(category.icon, category.icon_color) %></span><% end %>
               <%= category.name %>
             </a>

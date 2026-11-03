@@ -23,6 +23,13 @@ de `LICENSE` se mantiene.
 | `app/javascript/shared/assets/fonts/Manrope/` | Manrope (OFL), incluida en la imagen |
 | `app/javascript/portal/application.scss` | El centro de ayuda usa Manrope |
 | `app/javascript/shared/components/Branding.vue` | El chat no muestra «Desarrollado por …» |
+| `app/javascript/widget/composables/useAvailability.js`, `Availability/AvailabilityText.vue` (+ spec) | Con un bot conectado, el chat está «en línea» y «Responde al instante» |
+| `app/javascript/widget/components/AgentMessage.vue` | Distintivo «Respondió la IA» en los mensajes del bot |
+| `app/javascript/widget/i18n/locale/es.json`, `en.json` | Textos `MRBOT.AI_REPLIED` y `REPLY_TIME.INSTANTLY` |
+| `app/views/public/api/v1/portals/_hero.html.erb` | Cabecera azul como la portada del centro de ayuda (arte de «Marketing y soporte») |
+| `app/views/public/api/v1/portals/_header.html.erb` | Logo de Mr. Bot (claro y oscuro) si el portal no tiene uno propio |
+| `app/helpers/portal_helper.rb` | Un ícono `/brand-assets/ayuda/<nombre>.svg` se muestra como imagen |
+| `public/brand-assets/ayuda/` | Íconos de las 8 categorías y la grilla de la portada |
 | `MRBOT.md` | Este archivo |
 
 Los valores de `installation_config.yml` solo se siembran en una base nueva. En el servidor de soporte los deja en la

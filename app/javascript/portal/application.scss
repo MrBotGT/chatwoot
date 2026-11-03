@@ -60,3 +60,14 @@ body {
 .turbo-progress-bar {
   background-color: var(--dynamic-portal-color);
 }
+
+// Mr. Bot (ver MRBOT.md): íconos de categoría con su propio fondo (48×48), más chicos en los atajos de la cabecera.
+.mrbot-icono {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+#mrbot-hero .mrbot-icono {
+  width: 1.25rem;
+  height: 1.25rem;
+}
