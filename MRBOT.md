@@ -32,7 +32,7 @@ de `LICENSE` se mantiene.
 | `app/views/public/api/v1/portals/_header.html.erb` | Logo de Mr. Bot (claro y oscuro) si el portal no tiene uno propio |
 | `app/controllers/public/api/v1/portals/base_controller.rb` | Carga `LOGO` y `LOGO_DARK` para ese logo |
 | `app/helpers/portal_helper.rb` | Un ícono `/brand-assets/ayuda/<nombre>.svg` se muestra como imagen |
-| `public/brand-assets/ayuda/` | Íconos de las 8 categorías y la grilla de la portada |
+| `public/brand-assets/ayuda/` | Íconos de las categorías (las de especialidad llevan el símbolo de su marca) y la grilla de la portada |
 | `MRBOT.md` | Este archivo |
 
 Los valores de `installation_config.yml` solo se siembran en una base nueva. En el servidor de soporte los deja en la
